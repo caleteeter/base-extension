@@ -1,0 +1,49 @@
+{
+    "name": "template",
+    "displayName": "Display name for template",
+    "description": "Description for the template",
+    "version": "0.1.0",
+    "publisher": "contonso",
+    "engines": {
+        "vscode": "^1.32.0"
+    },
+    "categories": [
+        "Extension Packs",
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:sample.sampleCommand"
+    ],
+    "main": "./dist/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "sample.sampleCommand",
+                "title": "Sample command"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile && npm run webpack",
+        "webpack": "webpack --profile --json --mode development > webpack-stats.json",
+        "webpack-prod": "webpack --profile --json --mode production > webpack-stats-prod.json",
+        "package": "npx vsce package",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install"
+    },
+    "devDependencies": {
+        "@types/fs-extra": "^7.0.0",
+        "@types/node": "^12.0.4",
+        "tslint": "^5.17.0",
+        "ts-loader": "^5.4.5",
+        "typescript": "^3.5.1",
+        "vscode": "^1.1.34",
+        "webpack": "^4.29.3",
+        "webpack-cli": "^3.2.3"
+    },
+    "dependencies": {
+        "fs-extra": "^8.0.1",
+        "vscode-azureextensionui": "^0.25.0"
+    }
+}
