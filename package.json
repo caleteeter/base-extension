@@ -1,7 +1,7 @@
 {
     "name": "template",
-    "displayName": "Display name for template",
-    "description": "Description for the template",
+    "displayName": "Azure Blockchain",
+    "description": "Sample template for open browser",
     "version": "0.1.0",
     "publisher": "contonso",
     "engines": {
@@ -12,14 +12,24 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:sample.sampleCommand"
+        "onCommand:sample.sampleCommand",
+        "onCommand:sample.sampleCommand1",
+        "onCommand:sample.sampleCommand2"
     ],
-    "main": "./dist/extension.js",
+    "main": "./out/extension.js",
     "contributes": {
         "commands": [
             {
                 "command": "sample.sampleCommand",
                 "title": "Sample command"
+            },
+            {
+                "command": "sample.sampleCommand1",
+                "title": "Sample Open link"
+            },
+            {
+                "command": "sample.sampleCommand2",
+                "title": "Sample Open link 2"
             }
         ]
     },
@@ -44,6 +54,7 @@
     },
     "dependencies": {
         "fs-extra": "^8.0.1",
+        "opn": "^6.0.0",
         "vscode-azureextensionui": "^0.25.0"
     }
 }
